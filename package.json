@@ -1,0 +1,31 @@
+{
+  "name": "lei-app-hub",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:local": "bash tests/db/start-local-postgres.sh",
+    "test:db": "node --test --test-concurrency=1 tests/db/authz.test.mjs",
+    "check:bundle": "node scripts/check-bundle-secrets.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.18.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^6.3.0",
+    "pg": "^8.13.1",
+    "typescript": "~5.6.3",
+    "vite": "^8.3.7",
+    "vitest": "^5.1.0"
+  }
+}
